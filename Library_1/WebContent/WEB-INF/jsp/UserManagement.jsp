@@ -357,7 +357,7 @@ tr:nth-child(even) {
             </tr>
             <tr>            
             <td>Role: </td><td><input type="text" id="roless" name="roless" required/></td>
-            <td>Limitation of borrowing book: </td><td><input type="text" id="ticketnumber" name="limitBorrowingBook" required/></td>
+            <td>Limitation of borrowing book: </td><td><input type="number" id="ticketnumber" name="limitBorrowingBook" required /></td>
             </tr>
             <tr>            
             <td colspan="4"><center><input class="btn btn-success btn-lg" id="result" type="submit" value="Update" /></center></td>

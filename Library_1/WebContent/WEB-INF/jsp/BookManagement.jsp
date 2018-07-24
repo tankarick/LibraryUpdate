@@ -442,27 +442,27 @@ tr:nth-child(even) {
 							<form:hidden path="bookID" />
 							<tr>
 								<td>Title :</td>
-								<td><form:input path="bookTitle" size="130dp" /></td>
+								<td><form:input path="bookTitle" size="130dp" required="required"/></td>
 							</tr>
 							<tr>
 								<td>Author</td>
-								<td><form:input path="author" size="130dp" /></td>
+								<td><form:input path="author" size="130dp" required="required" /></td>
 							</tr>
 							<tr>
 								<td>Category</td>
-								<td><form:input path="category" size="130dp" /></td>
+								<td><form:input path="category" size="130dp" required="required"/></td>
 							</tr>
 							<tr>
 								<td>ISBN</td>
-								<td><form:input path="isbnNumber" size="130dp" /></td>
+								<td><form:input path="isbnNumber" size="130dp" required="required" pattern=".{13}" title="Either 13 chars" /></td>
 							</tr>
 							<tr>
 								<td>Price</td>
-								<td><form:input path="price" size="130dp" /></td>
+								<td><form:input path="price" size="130dp" required="required" type="number"/></td>
 							</tr>
 							<tr>
 								<td>Quantity</td>
-								<td><form:input path="quantity" size="130dp" id ="quantity" /></td>
+								<td><form:input path="quantity" size="130dp" id ="quantity" required="required" type="number"/></td>
 							</tr>
 							<tr>								
 								<form:input path="remain" value="10" size="130dp" id="remain" type="hidden"/>
