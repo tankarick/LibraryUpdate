@@ -362,9 +362,9 @@ tr:nth-child(even) {
 					href="<c:url value="/userticket" />" aria-expanded="false"><i
 						class="mdi mdi-border-inside"></i><span class="hide-menu">User
 							Ticket</span></a></li>
-				<li class="sidebar-item"><a
+				<li class="sidebar-item" id="report"><a
 					class="sidebar-link waves-effect waves-dark sidebar-link"
-					href="<c:url value="/report" />" aria-expanded="false" id="report"><i
+					href="<c:url value="/reportlibrary" />" aria-expanded="false" ><i
 						class="mdi mdi-blur-linear"></i><span class="hide-menu">Report</span></a></li>
 			</ul>
 			</nav>

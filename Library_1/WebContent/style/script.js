@@ -1,8 +1,13 @@
-function validateForm(){
-	var username = document.getElementById("username").value == "";
-	var password = document.getElementById("password").value == "";
-	if(username || password){
-		alert("Please enter your username and password!");
-		return false;
-	}
+var password = document.getElementById("password")
+  , passwordConfirm = document.getElementById("passwordConfirm");
+
+function validatePassword(){
+  if(password.value != passwordConfirm.value) {
+	  passwordConfirm.setCustomValidity("Passwords Don't Match");
+  } else {
+	  passwordConfirm.setCustomValidity('');
+  }
 }
+
+password.onchange = validatePassword;
+passwordConfirm.onkeyup = validatePassword;

@@ -70,6 +70,8 @@ public class UserController {
 		
 		String username = request.getParameter("username").toString();
 		String password = request.getParameter("password").toString();
+		String fullname = request.getParameter("name").toString();
+		String email = request.getParameter("email").toString();
 		
 		if(username != null) {
 			Users user = userService.getUserByName(username);
@@ -77,9 +79,10 @@ public class UserController {
 				Users u = new Users();
 				u.setUserName(username);
 				u.setPassWord(password);
-				u.setRole("student");
-				
+				u.setRole("student");				
 				u.setQuantityOfBookCanBorrow(5);
+				u.setFullName(fullname);
+				u.setEmail(email);
 				userService.addUser(u);
 				return "Login";
 			}else {

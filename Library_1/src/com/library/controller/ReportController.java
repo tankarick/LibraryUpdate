@@ -15,10 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.library.service.UserService;
 @Controller
 public class ReportController {
-	@Autowired
-	UserService userService;
-	@RequestMapping("/report")
-	public String report(HttpServletRequest request, Model model,  HttpServletResponse response) throws ServletException, IOException {
+	@RequestMapping("/reportlibrary")
+	public String reportLibrary(HttpServletRequest request, Model model,  HttpServletResponse response) throws ServletException, IOException {
 		return "Report";		
 	}
 

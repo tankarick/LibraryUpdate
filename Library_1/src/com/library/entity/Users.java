@@ -28,6 +28,28 @@ public class Users implements Serializable {
 
 	@Column(name = "quantitycanborrow")
 	private int quantityOfBookCanBorrow;
+	
+	@Column(name = "fullname")
+	private String fullName;
+	
+	public String getFullName() {
+		return fullName;
+	}
+
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	@Column(name = "email")
+	private String email;
 
 	public int getId() {
 		return id;
