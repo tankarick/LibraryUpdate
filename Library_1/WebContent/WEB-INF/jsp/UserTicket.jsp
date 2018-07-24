@@ -354,7 +354,10 @@ tr:nth-child(even) {
             <%-- <td>${ticket.status}</td> --%>
             <td>${ticket.dateOpen}</td>
             <td>${ticket.dateClose}</td>
-            <td>${ticket.userNameClosed}</td>            
+            <td>${ticket.userNameClosed}</td>  
+            <c:if test = "${ticket.dateOpen <= '2018-07-24 11:53:31.0'}">
+            <td>Cgfhgfhgf</td>
+     		</c:if>        
             </tr>
             <%-- <td><a href="<c:url value='/updateuser${user.id}'></c:url>">Edit</a></td> --%>
             <%-- <td><a href="#" id="edit">Edit</a>&nbsp/&nbsp<a href="<c:url value='/deleteuser${user.id}'></c:url>">Delete</a></td> --%>

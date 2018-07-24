@@ -352,12 +352,12 @@ tr:nth-child(even) {
             <input type="hidden" id="id" name="id" />
             <table class="table">
             <tr>
-            <td>User Name:</td><td><label for="userName"><input type="text" id="userName" name="userName"/></label></td>
-            <td>Password:</td><td><input type="text" id="passWord" name="passWord"/></td>
+            <td>User Name:</td><td><label for="userName"><input type="text" id="userName" name="userName" required/></label></td>
+            <td>Password:</td><td><input type="text" id="passWord" name="passWord" required/></td>
             </tr>
             <tr>            
-            <td>Role: </td><td><input type="text" id="roless" name="roless"/></td>
-            <td>Limitation of borrowing book: </td><td><input type="text" id="ticketnumber" name="limitBorrowingBook"/></td>
+            <td>Role: </td><td><input type="text" id="roless" name="roless" required/></td>
+            <td>Limitation of borrowing book: </td><td><input type="text" id="ticketnumber" name="limitBorrowingBook" required/></td>
             </tr>
             <tr>            
             <td colspan="4"><center><input class="btn btn-success btn-lg" id="result" type="submit" value="Update" /></center></td>

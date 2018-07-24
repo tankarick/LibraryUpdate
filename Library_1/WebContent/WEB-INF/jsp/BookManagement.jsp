@@ -462,7 +462,7 @@ tr:nth-child(even) {
 							</tr>
 							<tr>
 								<td>Quantity</td>
-								<td><form:input path="quantity" size="130dp" id ="quantity"/></td>
+								<td><form:input path="quantity" size="130dp" id ="quantity" /></td>
 							</tr>
 							<tr>								
 								<form:input path="remain" value="10" size="130dp" id="remain" type="hidden"/>
@@ -476,7 +476,7 @@ tr:nth-child(even) {
 							<tr>
 								<td>Image</td>
 								<td><form:input path="imageBook" size="130dp" /><input
-									type="file" name="file" size="5dp" /></td>
+									type="file" name="file" size="5dp"/></td>
 							</tr>
 							<tr>
 								<td></td>
@@ -500,31 +500,31 @@ tr:nth-child(even) {
 						<tr>
 							<td>Title:</td>
 							<td><input type="text" id="updatetitle" name="updatetitle"
-								size="130dp" /></td>
+								size="130dp" required /></td>
 						</tr>
 						<td>Author:</td>
 						<td><input type="text" id="updateauthor" name="updateauthor"
-							size="130dp" /></td>
+							size="130dp" required /></td>
 						</tr>
 						<tr>
 							<td>Category:</td>
 							<td><input type="text" id="updatecategory"
-								name="updatecategory" size="130dp" /></td>
+								name="updatecategory" size="130dp" required /></td>
 						</tr>
 						<tr>
 							<td>ISBN:</td>
 							<td><input type="text" id="updateisbn" name="updateisbn"
-								size="130dp" /></td>
+								size="130dp" required/></td>
 						</tr>
 						<tr>
 							<td>Price:</td>
-							<td><input type="text" id="updateprice" name="updateprice"
-								size="130dp" /></td>
+							<td><input type="number" id="updateprice" name="updateprice"
+								size="130dp" required /></td>
 						</tr>
 						<tr>
 							<td>Add more:</td>
-							<td><input type="text" id="updatequantity"
-								name="updatequantity" size="130dp" /></td>
+							<td><input type="number" id="updatequantity"
+								name="updatequantity" size="130dp" required/></td>
 						</tr>						
 						<tr>
 							<td></td>
