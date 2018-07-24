@@ -363,7 +363,7 @@ tr:nth-child(even) {
 						class="mdi mdi-border-inside"></i><span class="hide-menu">User Ticket</span></a></li>
 				<li class="sidebar-item"><a
 					class="sidebar-link waves-effect waves-dark sidebar-link"
-					href="grid.html" aria-expanded="false" id="report"><i
+					href="<c:url value="/report" />" aria-expanded="false" id="report"><i
 						class="mdi mdi-blur-linear"></i><span class="hide-menu">Report</span></a></li>
 			</ul>
 			</nav>

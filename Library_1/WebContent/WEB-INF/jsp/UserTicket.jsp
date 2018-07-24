@@ -289,7 +289,7 @@ tr:nth-child(even) {
                         <li class="sidebar-item" id ="ticketmanagement"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<c:url value="/ticketmanagement" />" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Ticket Management</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<c:url value="/userticket" />" aria-expanded="false"><i
 						class="mdi mdi-border-inside"></i><span class="hide-menu">User Ticket</a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="grid.html" aria-expanded="false" id="report"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">Report</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<c:url value="/report" />" aria-expanded="false" id="report"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">Report</span></a></li>
                         
                     </ul>
                 </nav>
