@@ -5,6 +5,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
@@ -309,8 +310,7 @@ tr:nth-child(even) {
  	if (session.getAttribute("username") != null) {
  %> <strong><%=session.getAttribute("username")%></strong> <%
  	}
- %></a> <a
-							class="dropdown-item" href="javascript:void(0)"><i
+ %></a> <a class="dropdown-item" href="javascript:void(0)"><i
 							class="ti-wallet m-r-5 m-l-5"></i> My Balance</a> <input id="role"
 							value="<%=session.getAttribute("role")%>" type="hidden" /> <a
 							class="dropdown-item" href="javascript:void(0)"><i
@@ -407,7 +407,84 @@ tr:nth-child(even) {
 			<!-- ============================================================== -->
 			<!-- Container fluid  -->
 			<!-- ============================================================== -->
-			<div class="container-fluid"></div>
+			<div class="container-fluid" ng-app="myApp" ng-controller="myCtrl">
+
+				<p align="right" style="position: relative;">
+					<input id="search" type="text" placeholder="Search..">
+				</p>
+				<p align="left" style="position: absolute;">
+				<form action="sortReport" method="post">
+					From :<input type="date" id="startDate" required name="startDate"
+						value="${startDate}">To : <input type="date" id="endDate"
+						required name="endDate" value="${endDate}"> <input
+						type="submit" name="Sort">
+				</form>
+				</p>
+
+
+				<br>
+				<p id="test"></p>
+				<br>
+
+				<table id="table">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>User Name</th>
+							<th>Book's Title</th>
+							<th>Status</th>
+							<th>Date open</th>
+							<th>Date close</th>
+							<th>User closed</th>
+							<th>Price</th>
+						</tr>
+					<thead>
+						<c:forEach var="ticket" items="${listTicket}" varStatus="current">
+							<tbody id="myTable">
+								<tr>
+									<td>${ticket.id}</td>
+									<td>${listUser[current.index].userName}</td>
+									<td>${listBook[current.index].bookTitle}</td>
+									<c:if test="${ticket.status == 1}">
+										<td><p>Borrowing</p></td>
+									</c:if>
+									<c:if test="${ticket.status == 0}">
+										<td><p>Returned</p></td>
+									</c:if>
+									<td id="tableDateOpen">${ticket.dateOpen}</td>
+
+									<td>
+										<%-- 									<c:if test="> --%> <%-- 										<td><p>Hom qua</p></td> --%>
+										<%-- 									</c:if> --%> ${ticket.dateClose}
+									</td>
+									<td>${ticket.userNameClosed}</td>
+									<td>${ticket.price}</td>
+								</tr>
+							</tbody>
+						</c:forEach>
+				</table>
+				<br>
+				<p align="justify">
+				<h1>
+					Income: <span id="income"><script>
+         var formatter = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'VND',
+            minimumFractionDigits: 2,
+         });
+         // for 150$
+         document.write(formatter.format(${income}));
+      </script></span>
+				</h1>
+				</p>
+
+
+			</div>
+			<script type="text/javascript">
+				document.ready(function(){
+					alert();
+				});
+			</script>
 			<!-- ============================================================== -->
 			<!-- End Container fluid  -->
 			<!-- ============================================================== -->
@@ -431,6 +508,7 @@ tr:nth-child(even) {
 	<!-- ============================================================== -->
 	<!-- All Jquery -->
 	<!-- ============================================================== -->
+
 	<script src="style/assets/libs/jquery/dist/jquery.min.js"></script>
 	<!-- Bootstrap tether Core JavaScript -->
 	<script src="style/assets/libs/popper.js/dist/umd/popper.min.js"></script>

@@ -11,4 +11,6 @@ public interface TicketDAO {
 	public void closeTicket(Tickets ticket);
 	public List<Tickets> getAllTicket();
 	public List<Tickets> getTicketsByUserID(int userID);
+	public List<Tickets> getSortTicket(String startDate, String endDate);
+	
 }

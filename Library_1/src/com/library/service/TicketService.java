@@ -13,4 +13,5 @@ public interface TicketService {
 	public List<Tickets> getAllTicket();
 	public List<Tickets> getTicketsByUserID(int userID);
 	public void closeTicket(Tickets ticket);
+	public List<Tickets> getSortTicket(String startDate, String endDate);
 }

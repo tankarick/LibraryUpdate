@@ -47,5 +47,11 @@ public class TicketServiceImp implements TicketService{
 		
 	}
 
+	@Override
+	public List<Tickets> getSortTicket(String startDate, String endDate) {
+		
+		return ticketDAO.getSortTicket(startDate, endDate);
+	}
+
 	
 }

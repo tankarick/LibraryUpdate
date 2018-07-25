@@ -364,7 +364,7 @@ tr:nth-child(even) {
 							Ticket</span></a></li>
 				<li class="sidebar-item" id="report"><a
 					class="sidebar-link waves-effect waves-dark sidebar-link"
-					href="<c:url value="/reportlibrary" />" aria-expanded="false" ><i
+					href="<c:url value="/reportlibrary" />" aria-expanded="false"><i
 						class="mdi mdi-blur-linear"></i><span class="hide-menu">Report</span></a></li>
 			</ul>
 			</nav>
@@ -404,32 +404,32 @@ tr:nth-child(even) {
 					<table class="table" id="table">
 						<tbody id="myTable">
 							<c:forEach items="${listbook}" var="item">
-								<tr>
-									<%-- <td>${item.imageBook}</td> --%>
-									<td><center>
-											<img src="style/assets/images/book.png" height="100dp"
-												width="200dp" />
-										</center></td>
-									<td><center>
-											<h2 style="color: blue">${item.bookTitle}</h2>
-											<h4 style="color: black; font-style: italic">${item.author}</h4>
-											<span style="color: red">Price: ${item.price}</span><br>${item.category}<br>
-											<span id="bookRemain">Remain: ${item.remain}</span><br>
-										</center></td>
-									<td><center>
-											<c:if test="${item.remain > 0}">
+								<center>
+									<tr>
+										<%-- <td>${item.imageBook}</td> --%>
+										<td><center>
+												<img src="${item.imageBook}" width="200dp"  height="150dp" />
+											</center></td>
+										<td><center>
+												<h2 style="color: blue">${item.bookTitle}</h2>
+												<h4 style="color: black; font-style: italic">${item.author}</h4>
+												<span style="color: red">Price: ${item.price}</span><br>${item.category}<br>
+												<span id="bookRemain">Remain: ${item.remain}</span><br>
+											</center></td>
+										<td><br><br><center>
+												<c:if test="${item.remain > 0}">
+													<a id="buttonBorrow"
+														href="<c:url value='/openTicket${item.bookID}/${item.price}'></c:url>"
+														id="openTicket" class="btn btn-success btn-lg">Borrow</a>
 
-												<a id="buttonBorrow"
-													href="<c:url value='/openTicket${item.bookID}/${item.price}'></c:url>"
-													id="openTicket" class="btn btn-success btn-lg">Borrow</a>
+												</c:if>
+												<c:if test="${item.remain <= 0}">
+													<p class="btn btn-success btn-lg">Out of book</p>
+												</c:if>
+											</center></td>
 
-											</c:if>
-											<c:if test="${item.remain <= 0}">
-												<p class="btn btn-success btn-lg">Out of book</p>
-											</c:if>
-										</center></td>
-
-								</tr>
+									</tr>
+								</center>
 							</c:forEach>
 
 						</tbody>

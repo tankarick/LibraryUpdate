@@ -454,7 +454,7 @@ tr:nth-child(even) {
 							</tr>
 							<tr>
 								<td>ISBN</td>
-								<td><form:input path="isbnNumber" size="130dp" required="required" pattern=".{13}" title="Either 13 chars" /></td>
+								<td><form:input path="isbnNumber" size="130dp" required="required" pattern=".{13}" title="Either 13 chars" maxlength="13"/></td>
 							</tr>
 							<tr>
 								<td>Price</td>
@@ -475,8 +475,7 @@ tr:nth-child(even) {
 							</tr>
 							<tr>
 								<td>Image</td>
-								<td><form:input path="imageBook" size="130dp" /><input
-									type="file" name="file" size="5dp"/></td>
+								<td><form:input path="imageBook" size="130dp" type="url" required="required"/></td>
 							</tr>
 							<tr>
 								<td></td>
