@@ -113,12 +113,16 @@ public class UserController {
 		String passWord = request.getParameter("passWord");
 		String role = request.getParameter("roless");
 		int limitBorrowingBook = Integer.parseInt(request.getParameter("limitBorrowingBook"));
+		String fullName = request.getParameter("fullName");
+		String email =request.getParameter("email");
 		Users u = new Users();
 		u.setId(id);
 		u.setUserName(userName);
 		u.setPassWord(passWord);
 		u.setRole(role);
 		u.setQuantityOfBookCanBorrow(limitBorrowingBook);
+		u.setFullName(fullName);
+		u.setEmail(email);
 		userService.updateUser(u);
 		List<Users> list = userService.getAllUser();
 		model.addAttribute("list",list);

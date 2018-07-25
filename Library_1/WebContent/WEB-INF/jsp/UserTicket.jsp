@@ -371,7 +371,7 @@ tr:nth-child(even) {
 			<div class="page-breadcrumb">
 				<div class="row">
 					<div class="col-12 d-flex no-block align-items-center">
-						<h4 class="page-title">Dashboard</h4>
+						<h4 class="page-title">User Tickets</h4>
 						<div class="ml-auto text-right">
 							<nav aria-label="breadcrumb">
 							<ol class="breadcrumb">
@@ -423,10 +423,7 @@ tr:nth-child(even) {
 								<%-- <td>${ticket.status}</td> --%>
 								<td>${ticket.dateOpen}</td>
 								<td>${ticket.dateClose}</td>
-								<td>${ticket.userNameClosed}</td>
-								<c:if test="${ticket.dateOpen <= '2018-07-24 11:53:31.0'}">
-									<td>Cgfhgfhgf</td>
-								</c:if>
+								<td>${ticket.userNameClosed}</td>								
 							</tr>
 							<%-- <td><a href="<c:url value='/updateuser${user.id}'></c:url>">Edit</a></td> --%>
 							<%-- <td><a href="#" id="edit">Edit</a>&nbsp/&nbsp<a href="<c:url value='/deleteuser${user.id}'></c:url>">Delete</a></td> --%>

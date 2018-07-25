@@ -34,20 +34,6 @@
 		});
 	});
 </script>
-<!-- <script>
-    $(function () {
-        $('#table ${"#edit"}').click(function (e) {
-            e.preventDefault();
-            $('#id').val($(this).closest('tr').find('td:first').text()); 
-            $('#userName').val($(this).closest('tr').find('td:nth-child(2)').text()); 
-            $('#passWord').val($(this).closest('tr').find('td:nth-child(3)').text());           
-            $('#roless').val($(this).closest('tr').find('td:nth-child(4)').text());
-            $('#ticketnumber').val($(this).closest('tr').find('td:nth-child(5)').text());
-            $('#quantitycanborrow').val($(this).closest('tr').find('td:nth-child(6)').text());
-            $('#canborrow').val($(this).closest('tr').find('td:nth-child(7)').text());
-        });
-    });
-</script> -->
 <script>
 	$(function() {
 		$('#table ${"#edit"}')
@@ -66,15 +52,13 @@
 							$('#roless').val(
 									$(this).closest('tr').find(
 											'td:nth-child(4)').text());
-							$('#ticketnumber').val(
+							$('#limitBorrowingBook').val(
 									$(this).closest('tr').find(
 											'td:nth-child(5)').text());
-							$('#quantitycanborrow').val(
-									$(this).closest('tr').find(
-											'td:nth-child(6)').text());
-							$('#canborrow').val(
-									$(this).closest('tr').find(
-											'td:nth-child(7)').text());
+							$('#fullName').val($(this).closest('tr').find(
+									'td:nth-child(6)').text());
+							$('#email').val($(this).closest('tr').find(
+							'td:nth-child(7)').text());
 						});
 	});
 	function myFunction() {
@@ -389,7 +373,7 @@ tr:nth-child(even) {
 			<div class="page-breadcrumb">
 				<div class="row">
 					<div class="col-12 d-flex no-block align-items-center">
-						<h4 class="page-title">Dashboard</h4>
+						<h4 class="page-title">User Management</h4>
 						<div class="ml-auto text-right">
 							<nav aria-label="breadcrumb">
 							<ol class="breadcrumb">
@@ -423,8 +407,13 @@ tr:nth-child(even) {
 							<td>Role:</td>
 							<td><input type="text" id="roless" name="roless" required /></td>
 							<td>Limitation of borrowing book:</td>
-							<td><input type="number" id="ticketnumber"
+							<td><input type="number" id="limitBorrowingBook"
 								name="limitBorrowingBook" required /></td>
+						</tr>
+						<tr>
+						<td>Full name:</td>
+						<td><input type="text" id="fullName" id="fullName" name="fullName" required/></td>
+						<td>Email :</td><td><input type="email" id="email" name="email" required/></td>
 						</tr>
 						<tr>
 							<td colspan="4"><center>
@@ -447,6 +436,8 @@ tr:nth-child(even) {
 							<th>Password</th>
 							<th>Role</th>
 							<th>Quantity Can Borrow</th>
+							<th>Full Name</th>
+							<th>Email</th>
 							<th>Action</th>
 						</tr>
 					<thead>
@@ -458,6 +449,8 @@ tr:nth-child(even) {
 									<td>${user.passWord}</td>
 									<td>${user.role}</td>
 									<td>${user.quantityOfBookCanBorrow}</td>
+									<td>${user.fullName}</td>
+									<td>${user.email}</td>
 									<%-- <td><a href="<c:url value='/updateuser${user.id}'></c:url>">Edit</a></td> --%>
 									<td><a href="#" id="edit">Edit</a>&nbsp/&nbsp<a
 										href="<c:url value='/deleteuser${user.id}'></c:url>">Delete</a></td>
