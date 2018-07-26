@@ -136,13 +136,13 @@ tr:nth-child(even) {
 			<!-- ============================================================== -->
 			<a class="navbar-brand" href="<c:url value="/admin" />"> <!-- Logo icon -->
 				<b class="logo-icon p-l-10"> <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-					<!-- Dark Logo icon --> <img
-					src="style/assets/images/logo-icon.png" alt="homepage"
+					<!-- Dark Logo icon --> <img width="50dp" height="50dp"
+					src="style/book.png" alt="homepage"
 					class="light-logo" />
 
 			</b> <!--End Logo icon --> <!-- Logo text --> <span class="logo-text">
 					<!-- dark Logo text --> <img
-					src="style/assets/images/logo-text.png" alt="homepage"
+					src="style/dashboard.PNG" alt="homepage"
 					class="light-logo" height="28px" width="152px" />
 
 			</span> <!-- Logo icon --> <!-- <b class="logo-icon"> --> <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
@@ -170,37 +170,7 @@ tr:nth-child(even) {
 			<!-- toggle and nav items -->
 			<!-- ============================================================== -->
 			<ul class="navbar-nav float-left mr-auto">
-				<li class="nav-item d-none d-md-block"><a
-					class="nav-link sidebartoggler waves-effect waves-light"
-					href="javascript:void(0)" data-sidebartype="mini-sidebar"><i
-						class="mdi mdi-menu font-24"></i></a></li>
-				<!-- ============================================================== -->
-				<!-- create new -->
-				<!-- ============================================================== -->
-				<li class="nav-item dropdown"><a
-					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-					role="button" data-toggle="dropdown" aria-haspopup="true"
-					aria-expanded="false"> <span class="d-none d-md-block">Create
-							New <i class="fa fa-angle-down"></i>
-					</span> <span class="d-block d-md-none"><i class="fa fa-plus"></i></span>
-				</a>
-					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="#">Action</a> <a
-							class="dropdown-item" href="#">Another action</a>
-						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="#">Something else here</a>
-					</div></li>
-				<!-- ============================================================== -->
-				<!-- Search -->
-				<!-- ============================================================== -->
-				<li class="nav-item search-box"><a
-					class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i
-						class="ti-search"></i></a>
-					<form class="app-search position-absolute">
-						<input type="text" class="form-control"
-							placeholder="Search &amp; enter"> <a class="srh-btn"><i
-							class="ti-close"></i></a>
-					</form></li>
+
 			</ul>
 			<!-- ============================================================== -->
 			<!-- Right side toggle and nav items -->
@@ -209,84 +179,14 @@ tr:nth-child(even) {
 				<!-- ============================================================== -->
 				<!-- Comment -->
 				<!-- ============================================================== -->
-				<li class="nav-item dropdown"><a
-					class="nav-link dropdown-toggle waves-effect waves-dark" href=""
-					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<i class="mdi mdi-bell font-24"></i>
-				</a>
-					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="#">Action</a> <a
-							class="dropdown-item" href="#">Another action</a>
-						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="#">Something else here</a>
-					</div></li>
+
 				<!-- ============================================================== -->
 				<!-- End Comment -->
 				<!-- ============================================================== -->
 				<!-- ============================================================== -->
 				<!-- Messages -->
 				<!-- ============================================================== -->
-				<li class="nav-item dropdown"><a
-					class="nav-link dropdown-toggle waves-effect waves-dark" href=""
-					id="2" data-toggle="dropdown" aria-haspopup="true"
-					aria-expanded="false"> <i
-						class="font-24 mdi mdi-comment-processing"></i>
-				</a>
-					<div
-						class="dropdown-menu dropdown-menu-right mailbox animated bounceInDown"
-						aria-labelledby="2">
-						<ul class="list-style-none">
-							<li>
-								<div class="">
-									<!-- Message -->
-									<a href="javascript:void(0)" class="link border-top">
-										<div class="d-flex no-block align-items-center p-10">
-											<span class="btn btn-success btn-circle"><i
-												class="ti-calendar"></i></span>
-											<div class="m-l-10">
-												<h5 class="m-b-0">Event today</h5>
-												<span class="mail-desc">Just a reminder that event</span>
-											</div>
-										</div>
-									</a>
-									<!-- Message -->
-									<a href="javascript:void(0)" class="link border-top">
-										<div class="d-flex no-block align-items-center p-10">
-											<span class="btn btn-info btn-circle"><i
-												class="ti-settings"></i></span>
-											<div class="m-l-10">
-												<h5 class="m-b-0">Settings</h5>
-												<span class="mail-desc">You can customize this
-													template</span>
-											</div>
-										</div>
-									</a>
-									<!-- Message -->
-									<a href="javascript:void(0)" class="link border-top">
-										<div class="d-flex no-block align-items-center p-10">
-											<span class="btn btn-primary btn-circle"><i
-												class="ti-user"></i></span>
-											<div class="m-l-10">
-												<h5 class="m-b-0">Pavan kumar</h5>
-												<span class="mail-desc">Just see the my admin!</span>
-											</div>
-										</div>
-									</a>
-									<!-- Message -->
-									<a href="javascript:void(0)" class="link border-top">
-										<div class="d-flex no-block align-items-center p-10">
-											<span class="btn btn-danger btn-circle"><i
-												class="fa fa-link"></i></span>
-											<div class="m-l-10">
-												<h5 class="m-b-0">Luanch Admin</h5>
-												<span class="mail-desc">Just see the my new admin!</span>
-											</div>
-										</div>
-									</a>
-								</div>
-							</li>
-						</ul>
-					</div></li>
+
 				<!-- ============================================================== -->
 				<!-- End Messages -->
 				<!-- ============================================================== -->
@@ -294,7 +194,8 @@ tr:nth-child(even) {
 				<!-- ============================================================== -->
 				<!-- User profile and search -->
 				<!-- ============================================================== -->
-				<li class="nav-item dropdown"><a
+
+				<li class="nav-item dropdown"><br> <a
 					class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic"
 					href="" data-toggle="dropdown" aria-haspopup="true"
 					aria-expanded="false"><img
@@ -303,16 +204,11 @@ tr:nth-child(even) {
 					<div class="dropdown-menu dropdown-menu-right user-dd animated">
 						<a class="dropdown-item" href="javascript:void(0)"><i
 							class="ti-user m-r-5 m-l-5"></i> <%
- 	if (session.getAttribute("username") != null) {
- %> <strong><%=session.getAttribute("username")%></strong> <%
- 	}
- %></a> <a class="dropdown-item" href="javascript:void(0)"><i
-							class="ti-wallet m-r-5 m-l-5"></i> My Balance</a> <a
-							class="dropdown-item" href="javascript:void(0)"><i
-							class="ti-email m-r-5 m-l-5"></i> Inbox</a>
+ 							if (session.getAttribute("username") != null) {
+ 								%> <strong><%=session.getAttribute("username")%></strong> <%
+ 							} %></a>
 						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="javascript:void(0)"><i
-							class="ti-settings m-r-5 m-l-5"></i> Account Setting</a>
+						
 						<div class="dropdown-divider"></div>
 						<input id="role" value="<%=session.getAttribute("role")%>"
 							type="hidden" /> <a class="dropdown-item"
@@ -321,7 +217,7 @@ tr:nth-child(even) {
 						<div class="dropdown-divider"></div>
 						<div class="p-l-30 p-10">
 							<a href="javascript:void(0)"
-								class="btn btn-sm btn-success btn-rounded">View Profile</a>
+								class="btn btn-sm btn-success btn-rounded" data-toggle="modal" data-target="#exampleModal">View Profile</a>
 						</div>
 					</div></li>
 				<!-- ============================================================== -->
@@ -381,10 +277,11 @@ tr:nth-child(even) {
 			<!-- ============================================================== -->
 			<!-- Bread crumb and right sidebar toggle -->
 			<!-- ============================================================== -->
+			<br>
 			<div class="page-breadcrumb">
 				<div class="row">
 					<div class="col-12 d-flex no-block align-items-center">
-						<h4 class="page-title">Book Management</h4>
+						<h4 class="page-title">All books in Library</h4>
 
 					</div>
 				</div>
@@ -397,6 +294,50 @@ tr:nth-child(even) {
 			<!-- ============================================================== -->
 			<div class="container-fluid">
 
+				<!-- Modal -->
+				<div class="modal fade" id="exampleModal" tabindex="-1"
+					role="dialog" aria-labelledby="exampleModalLabel"
+					aria-hidden="true">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h1 class="modal-title" id="exampleModalLabel">User Information</h1>
+								<button type="button" class="close" data-dismiss="modal"
+									aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<table align="center">
+									
+									<tr>
+										<td>UserName: </td> <td>${user.userName}</td>
+									</tr>
+									<tr>
+										<td>FullName: </td> <td>${user.fullName}</td>
+									</tr>
+									<tr>
+										<td>Email: </td> <td>${user.email}</td>
+									</tr>
+									<tr>
+										<td>Quantity of book can borrow: </td> <td>${user.quantityOfBookCanBorrow}</td>
+									</tr>
+									<tr>
+										<td>Role: </td> <td>${user.role}</td>
+									</tr>
+								</table>
+							
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary"
+									data-dismiss="modal">Close</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
 				<div id="showtable">
 					<p align="right">
 						<input type="text" id="search" placeholder="Search.." />
@@ -408,19 +349,28 @@ tr:nth-child(even) {
 									<tr>
 										<%-- <td>${item.imageBook}</td> --%>
 										<td><center>
-												<img src="${item.imageBook}" width="200dp"  height="150dp" />
+												<img src="${item.imageBook}" width="200dp" height="150dp" />
 											</center></td>
 										<td><center>
 												<h2 style="color: blue">${item.bookTitle}</h2>
 												<h4 style="color: black; font-style: italic">${item.author}</h4>
 												<span style="color: red">Price: ${item.price}</span><br>${item.category}<br>
 												<span id="bookRemain">Remain: ${item.remain}</span><br>
+
 											</center></td>
-										<td><br><br><center>
+										<td><br>
+										<br>
+										<center>
 												<c:if test="${item.remain > 0}">
-													<a id="buttonBorrow"
-														href="<c:url value='/openTicket${item.bookID}/${item.price}'></c:url>"
-														id="openTicket" class="btn btn-success btn-lg">Borrow</a>
+
+													<c:if test="${limitBorrowBook == 0} ">
+														<p class="btn btn-success btn-lg">Out of limit</p>
+													</c:if>
+													<c:if test="${limitBorrowBook > 0}">
+														<a id="buttonBorrow"
+															href="<c:url value='/openTicket${item.bookID}/${item.price}'></c:url>"
+															id="openTicket" class="btn btn-success btn-lg">Borrow</a>
+													</c:if>
 
 												</c:if>
 												<c:if test="${item.remain <= 0}">
@@ -441,9 +391,7 @@ tr:nth-child(even) {
 				<!-- ============================================================== -->
 				<!-- footer -->
 				<!-- ============================================================== -->
-				<footer class="footer text-center"> All Rights Reserved by
-				Matrix-admin. Designed and Developed by <a
-					href="https://wrappixel.com">WrapPixel</a>. </footer>
+				<footer class="footer text-center"></footer>
 				<!-- ============================================================== -->
 				<!-- End footer -->
 				<!-- ============================================================== -->

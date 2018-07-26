@@ -42,30 +42,48 @@ public class TicketController {
 
 	@RequestMapping("/openTicket{bookID}/{price}")
 	public String openTicket(HttpServletRequest request, @PathVariable("bookID") int bookID,
-			@PathVariable("price") int price) {
+			@PathVariable("price") int price, Model model) {
 		HttpSession session = request.getSession();
 		int userID = (int) session.getAttribute("id");
-		// 1: borrow; 0: return book
-		int status = 1;
-		Tickets ticket = new Tickets();
-		ticket.setBook_id(bookID);
-		ticket.setUser_id(userID);
-		ticket.setPrice(price);
-		ticket.setStatus(status);
-		Date openDate = new Date(System.currentTimeMillis());
-		ticket.setDateOpen(openDate);
-		ticket.setDateClose(null);
+		
+		Users user = userService.findUser(userID);
+		
+		int limitBorrowBook = user.getQuantityOfBookCanBorrow();
+		if(limitBorrowBook <=0) {
+			model.addAttribute("limitBorrowBook", 0);
+			System.out.println(limitBorrowBook+" ");
+			return "redirect:/admin";
+		}else {
+			user.setQuantityOfBookCanBorrow(user.getQuantityOfBookCanBorrow() - 1);
+			userService.updateUser(user);
+			int status = 1;
+			Tickets ticket = new Tickets();
+			ticket.setBook_id(bookID);
+			ticket.setUser_id(userID);
+			ticket.setPrice(price);
+			ticket.setStatus(status);
+			Date openDate = new Date(System.currentTimeMillis());
+			ticket.setDateOpen(openDate);
+			ticket.setDateClose(null);
 
-		ticketService.openTicket(ticket);
-		Books book = bookService.getBookByID(bookID);
-		int remain = book.getRemain() - 1;
-		book.setRemain(remain);
-		bookService.updateBook(book);
+			ticketService.openTicket(ticket);
+			Books book = bookService.getBookByID(bookID);
+			int remain = book.getRemain() - 1;
+			book.setRemain(remain);
+			bookService.updateBook(book);
+			model.addAttribute("limitBorrowBook", limitBorrowBook);
+			System.out.println(limitBorrowBook+" ");
+			return "redirect:/admin";
+		}
+		
+		
+		// 1: borrow; 0: return book
+		
 		// SimpleDateFormat sdf = new SimpleDateFormat("dd:MM:yyyy hh:mm",
 		// Locale.getDefault());
 		// System.out.println(sdf.format(openDate));
 
-		return "redirect:/admin";
+		
 	}
 
 	@RequestMapping("/ticketmanagement")
@@ -90,12 +108,16 @@ public class TicketController {
 	public String closeTicket(HttpServletRequest request, @PathVariable("ticketID") int ticketID,
 			@PathVariable("bookID") int bookID, @PathVariable("userID") int userID, HttpSession session) {
 		// return = 0
+		Users user = userService.findUser(userID);
+		user.setQuantityOfBookCanBorrow(user.getQuantityOfBookCanBorrow() + 1);
+		userService.updateUser(user);
+		
 		int status = 0;
 		Tickets closeTicket = ticketService.getTicket(ticketID);
 		closeTicket.setStatus(status);
 		closeTicket.setUserNameClosed(session.getAttribute("username").toString());
 		Date closedate = new Date(System.currentTimeMillis());
-		closeTicket.setDateClose(closedate);
+		closeTicket.setDateClose(closedate);	
 		ticketService.closeTicket(closeTicket);
 
 		Books returnedBook = bookService.getBookByID(bookID);

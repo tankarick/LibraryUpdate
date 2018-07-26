@@ -47,10 +47,8 @@ public class UserDAOImp implements UserDAO {
 	}
 	@Transactional
 	@Override
-	//o day chi truyen vao duoc ID cua clas entity thôi. 
 	public Users getUserName(String userName, String passWord) {
-		//Em dung cau lenh HQL o day. 
-		// FROM Ủe ƯHEE userName = ? //// xem hql 
+	
 		Query query = sessionFactory.getCurrentSession().createQuery("FROM users WHERE username=:name and password=:pass");
 		query.setString("name", userName);
 		query.setString("pass", passWord);

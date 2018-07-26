@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!------ Include the above in your HEAD tag ---------->
 
 <!DOCTYPE html>
@@ -65,7 +66,10 @@
 						</div>
 					</div>
 					<br>
-					<p style="color: red">Incorrect account or password</p>
+					<c:if test="${sucess == 'Login fail!'}"> 
+						<p style="color: red">Incorrect account or password</p>
+					 </c:if>
+<!-- 					<p style="color: red">Incorrect account or password</p> -->
 					<br>
 					<div class="form-group ">
 						<input type="submit"

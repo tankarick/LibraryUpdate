@@ -48,10 +48,12 @@ public class UserController {
 				List<Books> list = bookService.getAllBook();
 				model.addAttribute("listbook", list);
 				request.setAttribute("addBook", new Books());
+				model.addAttribute("user", user);
+				model.addAttribute("limitBorrowBook", user.getQuantityOfBookCanBorrow());
 				return "Admin";
 				
 			}else {
-				model.addAttribute("sucess", "Fail!");
+				model.addAttribute("sucess", "Login fail!");
 				return "Login";
 			}
 		}
@@ -92,9 +94,14 @@ public class UserController {
 		return null;
 	}
 	@RequestMapping("/admin")
-	public String admin(HttpServletRequest request, Model model,  HttpServletResponse response) throws ServletException, IOException {
+	public String admin(HttpServletRequest request, Model model,  HttpServletResponse response, HttpSession session) throws ServletException, IOException {
 		List<Books> list = bookService.getAllBook();
+		int userID = Integer.parseInt(session.getAttribute("id").toString());
+		Users user = userService.findUser(userID);
+		int limitBorrowBook = user.getQuantityOfBookCanBorrow();
+		model.addAttribute("limitBorrowBook", limitBorrowBook);
 		model.addAttribute("listbook", list);
+		model.addAttribute("user", user);
 		request.setAttribute("addBook", new Books());
 		return "Admin";
 		
