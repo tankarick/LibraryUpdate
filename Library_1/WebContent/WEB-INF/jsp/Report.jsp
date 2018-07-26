@@ -268,6 +268,8 @@ tr:nth-child(even) {
 		<!-- Page wrapper  -->
 		<!-- ============================================================== -->
 		<div class="page-wrapper">
+		<input id="role" value="<%=session.getAttribute("role")%>"
+							type="hidden" />
 			<!-- ============================================================== -->
 			<!-- Bread crumb and right sidebar toggle -->
 			<!-- ============================================================== -->
@@ -300,7 +302,7 @@ tr:nth-child(even) {
 					From :<input type="date" id="startDate" required name="startDate"
 						value="${startDate}">To : <input type="date" id="endDate"
 						required name="endDate" value="${endDate}"> <input
-						type="submit" name="Sort">
+						type="submit" name="Sort" value="Sort">
 				</form>
 				</p>
 
@@ -355,7 +357,7 @@ tr:nth-child(even) {
             currency: 'VND',
             minimumFractionDigits: 2,
          });
-         // for 150$
+      
          document.write(formatter.format(${income}));
       </script></span>
 				</h1>
@@ -363,11 +365,9 @@ tr:nth-child(even) {
 
 
 			</div>
-			<script type="text/javascript">
-				document.ready(function(){
-					alert();
-				});
-			</script>
+			<div align="center">
+				<button onclick="saveExcel()" class="btn btn-success btn-lg" >Save Report</button>
+			</div>
 			<!-- ============================================================== -->
 			<!-- End Container fluid  -->
 			<!-- ============================================================== -->
@@ -389,7 +389,15 @@ tr:nth-child(even) {
 	<!-- ============================================================== -->
 	<!-- All Jquery -->
 	<!-- ============================================================== -->
-
+	<script>
+		var saveExcel = function(){
+		XLSX.utils.html.save_table_as_excel(document.getElementById('table'), {name: 'report.xlsx'});
+	}
+	
+	</script>
+	
+	<script src="https://cdn.rawgit.com/linways/table-to-excel/master/dist/xlsx_html.full.min.js"></script>
+	
 	<script src="style/assets/libs/jquery/dist/jquery.min.js"></script>
 	<!-- Bootstrap tether Core JavaScript -->
 	<script src="style/assets/libs/popper.js/dist/umd/popper.min.js"></script>

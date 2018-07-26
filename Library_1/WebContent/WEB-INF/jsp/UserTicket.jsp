@@ -35,49 +35,32 @@
 	});
 </script>
 <script>
-	$(function() {
-		$('#table ${"#edit"}')
-				.click(
-						function(e) {
-							e.preventDefault();
-							$('#id').val(
-									$(this).closest('tr').find('td:first')
-											.text());
-							$('#userName').val(
-									$(this).closest('tr').find(
-											'td:nth-child(2)').text());
-							$('#passWord').val(
-									$(this).closest('tr').find(
-											'td:nth-child(3)').text());
-							$('#roless').val(
-									$(this).closest('tr').find(
-											'td:nth-child(4)').text());
-							$('#ticketnumber').val(
-									$(this).closest('tr').find(
-											'td:nth-child(5)').text());
-							$('#quantitycanborrow').val(
-									$(this).closest('tr').find(
-											'td:nth-child(6)').text());
-							$('#canborrow').val(
-									$(this).closest('tr').find(
-											'td:nth-child(7)').text());
-						});
+function myFunction() {
+	$("#validation").hide();
+	$("#showtable a").click(function() {
+		// 			$("#showtable").hide();
+		$("#validation").show();
+		$("#formAddBook").hide();
 	});
-</script>
-<script>
-	function myFunction() {
-		var role = document.getElementById("role").value;
-		if (role == 'admin') {
-		} else if (role == 'management') {
-			$('#usermanagement').hide();
-		} else {
-			$('#usermanagement').hide();
-			$('#bookmanagement').hide();
-			$('#ticketmanagement').hide();
-			$('#report').hide();
-		}
+	$("#formAddBook").hide();
+	$("#addBookForm").click(function() {
+		$("#formAddBook").slideToggle();
+		$("#validation").hide();
+		// 			$("#showtable").hide();
+	});
+	var role = document.getElementById("role").value;
+	if (role == 'admin') {
+	} else if (role == 'management') {
+		$('#usermanagement').hide();
+	} else {
+		$('#usermanagement').hide();
+		$('#bookmanagement').hide();
+		$('#ticketmanagement').hide();
+		$('#report').hide();
 	}
+}
 </script>
+
 <style>
 table {
 	font-family: arial, sans-serif;
@@ -177,6 +160,8 @@ tr:nth-child(even) {
 						
 							
 						<div class="dropdown-divider"></div>
+						<input id="role" value="<%=session.getAttribute("role")%>"
+							type="hidden" />
 						
 					</div></li>
 				<!-- ============================================================== -->

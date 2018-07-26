@@ -274,7 +274,8 @@ tr:nth-child(even) {
 			<!-- Container fluid  -->
 			<!-- ============================================================== -->
 			<div class="container-fluid">
-
+				<input id="role" value="<%=session.getAttribute("role")%>"
+							type="hidden" />
 				<br>
 				<p align="right">
 					<input id="search" type="text" placeholder="Search..">

@@ -223,6 +223,7 @@ tr:nth-child(even) {
 			<!-- Container fluid  -->
 			<!-- ============================================================== -->
 			<div class="container-fluid">
+			
 				<form id="validation" action="updateuser" method="POST">
 					<input type="hidden" id="id" name="id" />
 					<table class="table">

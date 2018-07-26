@@ -70,7 +70,7 @@
 <script>
 	function myFunction() {
 		$("#validation").hide();
-		$("#showtable a").click(function() {
+		$("#showtable #editbook").click(function() {
 			// 			$("#showtable").hide();
 			$("#validation").show();
 			$("#formAddBook").hide();
@@ -271,7 +271,8 @@ tr:nth-child(even) {
 			<!-- Container fluid  -->
 			<!-- ============================================================== -->
 			<div class="container-fluid">
-
+				<input id="role" value="<%=session.getAttribute("role")%>"
+							type="hidden" />
 				<div id="showtable">
 					<p align="right">
 						<input type="text" id="search" placeholder="Search.." />

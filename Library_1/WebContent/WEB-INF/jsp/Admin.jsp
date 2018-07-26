@@ -25,7 +25,8 @@
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.js"></script>
 <script>
-	$(function() {
+	
+	$(function() {	
 		$('#table ${"#editbook"}')
 				.click(
 						function(e) {
@@ -342,7 +343,7 @@ tr:nth-child(even) {
 					<p align="right">
 						<input type="text" id="search" placeholder="Search.." />
 					</p>
-					<table class="table" id="table">
+					<table class="table table-bordered" id="table">
 						<tbody id="myTable">
 							<c:forEach items="${listbook}" var="item">
 								<center>
